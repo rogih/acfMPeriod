@@ -6,7 +6,7 @@ Author: Higor Cotta, Valderio Reisen, Pascal Bondon and Céline Lévy-Leduc
 Maintainer: Higor Cotta <cotta.higor@gmail.com>
 Depends: R (>= 3.2.2), 
    MASS
-Description: A computation of the non-robust and robust sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF. The robust version is obtained fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram.
+Description: Non-robust and robust computations of the sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF. The robust version is obtained by fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
