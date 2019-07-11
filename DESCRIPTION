@@ -1,12 +1,12 @@
 Package: acfMPeriod
 Type: Package
-Title: Applications of the M-Periodogram and M-Cross-Periodogram to the Robust Estimation of the Autocovariance and Autocorrelation Functions(Univariate and Multivariate)
+Title: Robust Estimation of the ACF from the M-Periodogram
 Version: 1.0.0
 Author: Higor Cotta, Valderio Reisen, Pascal Bondon and Céline Lévy-Leduc
 Maintainer: Higor Cotta <cotta.higor@gmail.com>
 Depends: R (>= 3.2.2), 
    MASS
-Description: This package presents the computation of the non-robust and robust sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF. The robust version is obtained fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram.
+Description: A computation of the non-robust and robust sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF. The robust version is obtained fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
