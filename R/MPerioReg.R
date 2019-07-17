@@ -13,7 +13,7 @@
 MPerioReg <- function(series) {
   n <- length(series)
   perior <- FFT <- NULL
-  g<-n%/%2
+  g <- n %/% 2
   for (j in 1:g) {
     X1 <- X2 <- NULL
     w <- 2 * pi * j / n
@@ -23,19 +23,19 @@ MPerioReg <- function(series) {
     }
     if (j != (n / 2)) {
       MX <- cbind(X1, X2)
-      fitrob <- rlm(series~MX-1, method = "M", psi = MASS::psi.huber)
+      fitrob <- rlm(series ~ MX - 1, method = "M", psi = MASS::psi.huber)
       FFT[j] <- sqrt(n / (8 * pi)) * complex(real = fitrob$coef[1], imaginary = -fitrob$coef[2])
     }
     else {
       MX <- cbind(X1)
-      fitrob <- rlm(series~MX-1, method = "M", psi = MASS::psi.huber)
+      fitrob <- rlm(series ~ MX - 1, method = "M", psi = MASS::psi.huber)
       FFT[j] <- sqrt(n / (2 * pi)) * complex(real = fitrob$coef[1], imaginary = -0)
     }
     perior[j] <- Mod(FFT[j])^2
   }
-  if((n %% 2) != 0){
-    return(c(perior,rev(perior)))
+  if ((n %% 2) != 0) {
+    return(c(perior, rev(perior)))
   } else {
-    return(c(perior,rev(perior))[-g])
+    return(c(perior, rev(perior))[-g])
   }
 }

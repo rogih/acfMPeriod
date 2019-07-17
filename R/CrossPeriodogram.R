@@ -29,7 +29,7 @@ CrossPeriodogram <- function(series1, series2) {
   }
   cross.periodxy <- c((2 * n * alpha.period1 * alpha.period2), cross.periodxy)
   cross.periodyx <- c((2 * n * alpha.period1 * alpha.period2), cross.periodyx)
-  cross.period <- list(cross.periodxy = cross.periodxy,cross.periodyx = cross.periodyx)
+  cross.period <- list(cross.periodxy = cross.periodxy, cross.periodyx = cross.periodyx)
   return(cross.period)
 }
 
@@ -37,7 +37,7 @@ CrossPeriodogram <- function(series1, series2) {
 PerioRegAux <- function(series) {
   n <- length(series)
   perior <- FFT <- NULL
-  g<-n%/%2
+  g <- n %/% 2
   for (j in 1:g) {
     X1 <- X2 <- NULL
     w <- 2 * pi * j / n
@@ -57,12 +57,9 @@ PerioRegAux <- function(series) {
     }
     perior[j] <- (FFT[j])
   }
-  if((n %% 2) != 0){
-    return(c(perior,rev(perior)))
+  if ((n %% 2) != 0) {
+    return(c(perior, rev(perior)))
   } else {
-    return(c(perior,rev(perior))[-g])
+    return(c(perior, rev(perior))[-g])
   }
 }
-
-
-

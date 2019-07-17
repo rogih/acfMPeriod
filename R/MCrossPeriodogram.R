@@ -29,7 +29,7 @@ MCrossPeriodogram <- function(series1, series2) {
   }
   cross.periodxy <- c((2 * n * alpha.period1 * alpha.period2), cross.periodxy)
   cross.periodyx <- c((2 * n * alpha.period1 * alpha.period2), cross.periodyx)
-  cross.period <- list(cross.periodxy = cross.periodxy,cross.periodyx = cross.periodyx)
+  cross.period <- list(cross.periodxy = cross.periodxy, cross.periodyx = cross.periodyx)
   return(cross.period)
 }
 

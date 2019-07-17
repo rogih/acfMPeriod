@@ -6,10 +6,10 @@
 #' @return a numeric matrix
 #' @export
 #' @examples
-#' data.set <- cbind(fdeaths,mdeaths)
+#' data.set <- cbind(fdeaths, mdeaths)
 #' CovCorPer(data.set)
 CovCorPer <- function(x, type = c("correlation", "covariance")) {
   type <- match.arg(type)
-  mat.comp <- PerACF(x, lag.max = 1, plot = F, type)$acf
+  mat.comp <- PerACF(x, lag.max = 1, plot = FALSE, type)$acf
   return(mat.comp[1, , ])
 }

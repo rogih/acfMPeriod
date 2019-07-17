@@ -12,7 +12,7 @@
 PerioReg <- function(series) {
   n <- length(series)
   perior <- FFT <- NULL
-  g<-n%/%2
+  g <- n %/% 2
   for (j in 1:g) {
     X1 <- X2 <- NULL
     w <- 2 * pi * j / n
@@ -32,9 +32,9 @@ PerioReg <- function(series) {
     }
     perior[j] <- Mod(FFT[j])^2
   }
-  if((n %% 2) != 0){
-    return(c(perior,rev(perior)))
+  if ((n %% 2) != 0) {
+    return(c(perior, rev(perior)))
   } else {
-    return(c(perior,rev(perior))[-g])
+    return(c(perior, rev(perior))[-g])
   }
 }

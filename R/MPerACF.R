@@ -26,7 +26,7 @@
 #' @export
 #' @import stats
 #' @examples
-#' data.set <- cbind(fdeaths,mdeaths)
+#' data.set <- cbind(fdeaths, mdeaths)
 #' MPerACF(data.set)
 MPerACF <- function(x, lag.max = NULL, type = c("correlation", "covariance"), plot = TRUE, na.action = na.fail, demean = TRUE, ...) {
   type <- match.arg(type)

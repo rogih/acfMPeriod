@@ -1,6 +1,6 @@
 Package: acfMPeriod
 Type: Package
-Title: Robust Estimation of the Acf from the M-periodogram
+Title: Robust Estimation of the Acf from the M-Periodogram
 Version: 1.0.0
 Author: Higor Cotta, Valderio Reisen, Pascal Bondon and Céline Lévy-Leduc
 Maintainer: Higor Cotta <cotta.higor@gmail.com>

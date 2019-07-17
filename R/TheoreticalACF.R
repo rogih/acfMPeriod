@@ -12,44 +12,46 @@
 #' @references Multivariate Time Series Analysis: with R and Financial Applications by Ruey S. Tsay, Wiley, 2014.
 #' @export
 #' @examples
-#' phi <- matrix(c(0.7,0.5,0,0.7),2,2)
-#' cov.mat <- matrix(c(1,0,0,1),2,2)
+#' phi <- matrix(c(0.7, 0.5, 0, 0.7), 2, 2)
+#' cov.mat <- matrix(c(1, 0, 0, 1), 2, 2)
 #' lagmax <- 9
-#' TheoreticalACF(cov.mat,phi,lagmax,1,1,"correlation")
-#' TheoreticalACF(cov.mat,phi,lagmax,1,2,"correlation")
-#' TheoreticalACF(cov.mat,phi,lagmax,2,1,"correlation")
-#' TheoreticalACF(cov.mat,phi,lagmax,2,2,"correlation")
-TheoreticalACF <- function(sig,phi,lagmax,s1,s2, type = c("correlation", "covariance")){
+#' TheoreticalACF(cov.mat, phi, lagmax, 1, 1, "correlation")
+#' TheoreticalACF(cov.mat, phi, lagmax, 1, 2, "correlation")
+#' TheoreticalACF(cov.mat, phi, lagmax, 2, 1, "correlation")
+#' TheoreticalACF(cov.mat, phi, lagmax, 2, 2, "correlation")
+TheoreticalACF <- function(sig, phi, lagmax, s1, s2, type = c("correlation", "covariance")) {
   type <- match.arg(type)
   nvar <- dim(phi)[1]
-  Id <- diag(rep(1,nvar^2))
-  kron <- kronecker(phi,phi)
+  Id <- diag(rep(1, nvar^2))
+  kron <- kronecker(phi, phi)
   vecSig <- c(sig)
-  vecSig <- matrix(vecSig,nvar^2,1)
-  Dif <- Id-kron
+  vecSig <- matrix(vecSig, nvar^2, 1)
+  Dif <- Id - kron
   DifInv <- solve(Dif)
-  gamma0 <- DifInv%*%vecSig
-  gamma0 <- matrix(gamma0,nvar,nvar)
-  acf.ret <-matrix(NA,1,lagmax)
-  if(type == "covariance"){
+  gamma0 <- DifInv %*% vecSig
+  gamma0 <- matrix(gamma0, nvar, nvar)
+  acf.ret <- matrix(NA, 1, lagmax)
+  if (type == "covariance") {
     gammaBef <- gamma0
-    acf.ret[,1] <- gamma0[s1,s2]
-    for(i in 2:lagmax){
-      gammaAtual <- phi%*%gammaBef
+    acf.ret[, 1] <- gamma0[s1, s2]
+    for (i in 2:lagmax) {
+      gammaAtual <- phi %*% gammaBef
       gammaBef <- gammaAtual
-      acf.ret[,i] <- gammaAtual[s1,s2]}
+      acf.ret[, i] <- gammaAtual[s1, s2]
+    }
   }
-  else{
+  else {
     D <- diag(sqrt(diag(gamma0)))
     Di <- solve(D)
-    rho0 <- Di%*%gamma0%*%Di
+    rho0 <- Di %*% gamma0 %*% Di
     gammaBef <- gamma0
-    acf.ret[,1] <- rho0[s1,s2]
-    for(i in 2:lagmax){
-      gammaAtual <- phi%*%gammaBef
+    acf.ret[, 1] <- rho0[s1, s2]
+    for (i in 2:lagmax) {
+      gammaAtual <- phi %*% gammaBef
       gammaBef <- gammaAtual
-      rhoAtual <- Di%*%gammaAtual%*%Di
-      acf.ret[,i] <- rhoAtual[s1,s2]    }
+      rhoAtual <- Di %*% gammaAtual %*% Di
+      acf.ret[, i] <- rhoAtual[s1, s2]
+    }
   }
   return(acf.ret)
 }

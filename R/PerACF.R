@@ -25,9 +25,9 @@
 #' @references Fuller, Wayne A. Introduction to statistical time series.  John Wiley & Sons, 2009.
 #' @export
 #' @examples
-#' data.set <- cbind(fdeaths,mdeaths)
+#' data.set <- cbind(fdeaths, mdeaths)
 #' PerACF(data.set)
-#' PerACF(data.set,type="covariance",lag.max=10)
+#' PerACF(data.set, type = "covariance", lag.max = 10)
 PerACF <- function(x, lag.max = NULL, type = c("correlation", "covariance"), plot = TRUE, na.action = na.fail, demean = TRUE, ...) {
   type <- match.arg(type)
   series <- deparse(substitute(x))
@@ -104,7 +104,7 @@ PerACF <- function(x, lag.max = NULL, type = c("correlation", "covariance"), plo
   }
   lag <- outer(0:(lag.max - 1), lag / x.freq)
   acf.out <- structure(list(acf = acf.per, type = type, n.used = sampleT, lag = lag, series = series, snames = colnames(x)),
-                       class = "acf"
+    class = "acf"
   )
   if (plot) {
     plot(acf.out, ci = 0)
