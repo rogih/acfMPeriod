@@ -47,9 +47,9 @@ This function computer and plots(by default) the estimates of the autocovariance
 on the periodogram and the cross-periodogram..
 }
 \examples{
-data.set <- cbind(fdeaths,mdeaths)
+data.set <- cbind(fdeaths, mdeaths)
 PerACF(data.set)
-PerACF(data.set,type="covariance",lag.max=10)
+PerACF(data.set, type = "covariance", lag.max = 10)
 }
 \references{
 Fuller, Wayne A. Introduction to statistical time series.  John Wiley & Sons, 2009.

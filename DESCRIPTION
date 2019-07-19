@@ -1,13 +1,15 @@
 Package: acfMPeriod
 Type: Package
-Title: Robust Estimation of the Acf from the M-Periodogram
+Title: Robust Estimation of the ACF from the M-Periodogram
 Version: 1.0.0
 Author: Higor Cotta, Valderio Reisen, Pascal Bondon and Céline Lévy-Leduc
 Maintainer: Higor Cotta <cotta.higor@gmail.com>
 Depends: R (>= 3.2.2), 
    MASS
-Description: Non-robust and robust computations of the sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF. The robust version is obtained by fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram.
+Description: Non-robust and robust computations of the sample autocovariance (ACOVF) and sample autocorrelation functions (ACF) of univariate and multivariate processes. The methodology consists in reversing the diagonalization procedure involving the periodogram or the cross-periodogram and the Fourier transform vectors, and, thus, obtaining the ACOVF or the ACF as discussed in Fuller (1995) <doi:10.1002/9780470316917>. The robust version is obtained by fitting robust M-regressors to obtain the M-periodogram or M-cross-periodogram as discussed in Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+
+

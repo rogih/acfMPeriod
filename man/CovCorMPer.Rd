@@ -18,6 +18,6 @@ a numeric matrix
 Wrapper that computes the covariance or correlation matrix of \code{x} at lag 0 obtained from the robust MPer-ACF.
 }
 \examples{
-data.set <- cbind(fdeaths,mdeaths)
+data.set <- cbind(fdeaths, mdeaths)
 CovCorMPer(data.set)
 }

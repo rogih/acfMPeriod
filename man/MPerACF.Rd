@@ -47,7 +47,7 @@ This function computer and plots(by default) the robust estimates of the autocov
 based on the M-periodogram and the M-cross-periodogram.
 }
 \examples{
-data.set <- cbind(fdeaths,mdeaths)
+data.set <- cbind(fdeaths, mdeaths)
 MPerACF(data.set)
 }
 \references{
